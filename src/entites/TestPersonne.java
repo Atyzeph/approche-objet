@@ -5,18 +5,14 @@ public class TestPersonne {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		AdressePostale adr1 = new AdressePostale();
-		adr1.numeroRue = 5;
-		adr1.libRue = "Rue des étangs";
-		adr1.postale = 80000;
-		adr1.ville = "Amiens";
+		AdressePostale adr1 = new AdressePostale(5, 60600, "Rue maréchale", "Clermont");
+		AdressePostale adr2 = new AdressePostale(10, 60140, "Rue de la paix", "Beauvais");
 		
-		Personne pers1 = new Personne();
-		pers1.nom = "Dujardin";
-		pers1.prenom = "Marco";
-		pers1.adrPostale = adr1;
+		Personne pers1 = new Personne("Martin", "Mathilde", adr1);
+		pers1.declarerIdentiter();
 		
-		Personne pers2 = new Personne();
+		Personne pers2 = new Personne("Collin", "Clément", adr2);
+		pers2.modifierAdressePersonne(adr1);
 	}
 
 }
