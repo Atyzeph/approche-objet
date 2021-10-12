@@ -17,7 +17,7 @@ public class TestMaison {
 		maison1.ajouterPiece(salon2);
 		
 		System.out.println(maison1.calculSuperficie());
-//		System.out.println(maison1.calculSuperficieParEtage(salon2));
+		System.out.println(maison1.calculSuperficieParEtage(salon2.getEtage()));
 	}
 
 }
