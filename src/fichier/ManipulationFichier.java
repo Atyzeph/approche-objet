@@ -19,7 +19,7 @@ public class ManipulationFichier {
 		
 		Path pathD = Paths.get("C:\\Users\\Clément\\Downloads\\grandesVilles.csv");
 		for (int i = 1; i < lines.size(); i++) {
-//			System.out.println(lines.get(i));
+			// On récupère les lignes une par une dans line
 			String line = lines.get(i);
 			String[] tab = line.split(";");
 			
