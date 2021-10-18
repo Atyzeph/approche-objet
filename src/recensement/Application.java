@@ -69,11 +69,15 @@ public class Application {
 		System.out.println("\n" + "-------------------------------" + "\n");
 		
 //		La plus petite ville (en cours ...)
-		
+		double minHab = nbHab;
+		String plusPetite = "";
 		for (Ville i : villes) {
-			if (i.getCodeDep().equals("34")) {
-				nbHab = Integer.parseInt(i.getPopTT().replace(" ", ""));
+			if (i.getCodeDep().equals("34") && Integer.parseInt(i.getPopTT().replace(" ", "")) <= minHab) {
+//				nbHab = Integer.parseInt(i.getPopTT().replace(" ", ""));
+				plusPetite = i.getNomCom();
 			}
 		}
+		
+		System.out.println("La plus petite ville est : " + plusPetite);
 	}
 }
