@@ -1,15 +1,15 @@
 package recensement;
 
-public class Ville {
+public class Ville implements Comparable<Ville>{
 
 	private String codeReg;
 	private String nomReg;
 	private String codeDep;
 	private String codeCom;
 	private String nomCom;
-	private String popTT;
+	private int popTT;
 	
-	public Ville(String codeReg, String nomReg, String codeDep, String codeCom, String nomCom, String popTT) {
+	public Ville(String codeReg, String nomReg, String codeDep, String codeCom, String nomCom, int popTT) {
 		super();
 		this.codeReg = codeReg;
 		this.nomReg = nomReg;
@@ -21,13 +21,20 @@ public class Ville {
 	
 	@Override
 	public String toString() {
-		return "Code de région : " + codeReg + "\n" + "Nom de région : " + nomReg + "\n" + "Code départemental : " + codeDep + "\n" +"Code de commune : " + codeCom
+		return "Code de rÃ©gion : " + codeReg + "\n" + "Nom de rÃ©gion : " + nomReg + "\n" + "Code dÃ©partemental : " + codeDep + "\n" +"Code de commune : " + codeCom
 				+ "\n" + "Nom de la commune : " + nomCom + "\n" + "Population totale : " + popTT + "\n";
 	}
 	
-	
-
-
+	public int compareTo(Ville obj) {
+		if (getPopTT() > obj.getPopTT()) {
+			return 1;
+		}
+		if (getPopTT() < obj.getPopTT()) {
+			return -1;
+		}
+		
+		return 0;
+	}
 
 	public String getCodeReg() {
 		return codeReg;
@@ -59,10 +66,10 @@ public class Ville {
 	public void setNomCom(String nomCom) {
 		this.nomCom = nomCom;
 	}
-	public String getPopTT() {
+	public int getPopTT() {
 		return popTT;
 	}
-	public void setPopTT(String popTT) {
+	public void setPopTT(int popTT) {
 		this.popTT = popTT;
 	}
 	
